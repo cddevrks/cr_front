@@ -1,0 +1,160 @@
+/* .footer-box li {
+    display: inline-block;
+    padding-left: 30px
+}
+
+#footer-sec {
+    padding: 10px 0 20px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.footer-shape {
+    position: absolute
+}
+
+.shape2 {
+    bottom: 200px;
+    left: -60px;
+    z-index: 0;
+}
+.cls{
+    
+}
+#footer-sec .shape3 {
+    bottom: 200px;
+    right: -100px;
+    z-index: 0
+}
+
+.footer-box p {
+    font-family: 'Chelsea Market';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 23px;
+    color: #FFFFFF
+}
+footer .shape1 {
+    bottom: 0;
+    top: auto;
+    left: 0;
+    z-index: 1;
+    width: 100%
+}
+.container-top{
+    width: 100%;
+    height: 80px;
+    padding-top: 2px;
+} */
+
+.gif{
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 0;
+    /* padding-top: 100px; */
+}
+/* .shape-right{
+    position: relative;
+    z-index: 0;
+    bottom: -120px;
+    left: 10px
+}
+.shape-left{
+    position: relative;
+    z-index: 0;
+} */
+.shape-left, .shape-right {
+    position: absolute;
+    z-index: 11;
+    bottom: 20px;
+}
+
+.shape-left {
+    left: 0;
+}
+
+.shape-right {
+    right: -30px;
+}
+#footer {
+    position: relative;
+    background-color: #230c3c;
+    overflow: hidden;
+    z-index: 0;
+}
+.footer-social{
+    bottom: 0;
+    right : 10%;
+    /* transform: translateY(-50%); */
+}
+
+@media screen and (max-width: 576px){
+    .shape-left, .shape-right {
+        
+        bottom: 120px;
+    }
+    .gif{
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 0;
+    }
+    .gif img{
+        height: 120px;
+    }
+    .shape-left {
+        left: 0;
+        display: none;
+    }
+    
+    .shape-right {
+        right: -30px;
+        display: none;
+    }
+    #footer {
+        position: relative;
+        background-color: #230c3c;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .footer-social{
+        /* bottom: -5%;
+        right : 10%; */
+        /* transform: translateY(-50%); */
+    }
+    .mydiv{
+        padding-top: 40px;
+    }
+    .image1{
+        height: 150px;
+        width: auto;
+        object-fit: contain;
+    }
+    .image2{
+        height: 150px;
+        width: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+}
+@media (min-width: 1024px){
+    .shape-left, .shape-right {
+        
+        bottom: 200px;
+    }
+    .image1{
+        height: 250px;
+        width: auto;
+        object-fit: contain;
+    }
+    .image2{
+        height: 250px;
+        width: auto;
+        object-fit: contain;
+        object-position: center;
+    }
+}

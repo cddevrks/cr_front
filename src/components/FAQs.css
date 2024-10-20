@@ -1,0 +1,19 @@
+  .faq-item {
+    position: relative;
+  }
+  
+  .faq-answer {
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0; 
+    transition: max-height 0.3s ease, opacity 0.3s ease; 
+  }
+  
+  .faq-answer.open {
+    max-height: 1000px; 
+    opacity: 1; 
+  }
+.faq-item:hover{
+  background: linear-gradient(180deg, rgba(255, 121, 52, 0.35) -1.39%, rgba(255, 255, 255, 0.0735) 95.65%);
+  opacity: 1;
+}

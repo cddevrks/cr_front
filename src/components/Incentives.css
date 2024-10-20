@@ -1,0 +1,223 @@
+/* .flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+  padding: 5px
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 2px solid rgb(104, 26, 104);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, rgb(245, 196, 255) 60%, rgb(252, 222, 255) 88%, rgb(242, 195, 255) 40%, rgba(238, 80, 255, 0.603) 48%);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(245, 196, 255) 60%, rgb(252, 222, 255) 88%, rgb(242, 195, 255) 40%, rgba(238, 80, 255, 0.603) 78%);
+  transform: rotateY(180deg);
+}
+  
+.flip-card-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+.sec-title {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 1;
+  color: #F4EDDF;
+  padding-bottom: 20px
+}
+.treasure-svg{
+  width: 75px;
+  height: 75px;
+  filter: drop-shadow(0 0 10px #fedf4f);
+  animation: glow 0.8s infinite alternate;
+  margin: 4px;
+}
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px #fedf4f);
+  }
+  to {
+    filter: drop-shadow(0 0 15px #fedf4f);
+  }
+} */
+
+.campaigns-container1 {
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper1 {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 80rem;
+  text-align: center;
+  margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+  .wrapper1 {
+    margin-top: 120px;
+  }
+}
+
+.cols1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .cols1 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.col1 {
+  width: calc(30% - 2rem);
+  margin: 3rem;
+}
+
+.profile-card1 {
+  position: relative;
+  font-family: sans-serif;
+  width: 220px;
+  height: 220px;
+  background-color: #f7f4f482;
+  padding: 1.5rem;
+  border-radius: 10%;
+  box-shadow: 0 0 22px rgba(51, 51, 54, 0.35);
+  transition: 0.6s;
+}
+
+.profile-card1:hover {
+  border-radius: 10px;
+  height: 350px;
+}
+
+.profile-card1:hover .img-container1 {
+  transform: translateY(-20px);
+}
+
+.profile-card1:hover img {
+  /* border-radius: 10px; */
+  opacity: 1;
+}
+
+.img-container1 {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: 0.6s;
+  z-index: 0;
+}
+
+.img-container1 img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  mix-blend-mode: color-burn;
+  border-radius: 50%;
+  box-shadow: 0 0 22px rgba(51, 51, 54, 1);
+  transition: 0.6s;
+  background-color: #ffffffac;
+}
+
+.caption1 {
+  text-align: center;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: 0.6s;
+  max-height: 150px;
+  overflow-y: auto;
+}
+.caption1::-webkit-scrollbar{
+  width: 5px;
+  background: #fff;
+}
+.caption1::-webkit-scrollbar-thumb{
+  background-color: #8605b4 
+}
+
+.profile-card1:hover .caption1 {
+  margin-top: 2px;
+  opacity: 1;
+}
+
+.caption1 p {
+  font-size: 15px;
+  color: #ffffff;
+  margin: 2px 0 9px 0;
+}
+
+.caption1 h4 {
+  color: black;
+  font-family: "Lato", sans-serif, cursive;
+}
+
+.name1{
+  font-size: 21px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 0.75em;
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.front1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.treasure-svg{
+  width: 95px;
+  height: 95px;
+  filter: drop-shadow(0 0 10px #fedf4f);
+  animation: glow 0.8s infinite alternate;
+  margin: 4px;
+}
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px #fedf4f);
+  }
+  to {
+    filter: drop-shadow(0 0 15px #fedf4f);
+  }
+}

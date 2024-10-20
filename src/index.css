@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .nav_link{
+        @apply relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[2px]
+        after:bg-[#ffd700] text-white hover:text-[#ffd700] after:w-full font-medium after:scale-x-0 after:hover:scale-x-100
+        after:transition after:duration-300 after:origin-center
+    }
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+body{
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body{
+    cursor: url('./assets/sword1.svg'), auto;
+}
+.register-btn, .close-btn, .hoverable, .col1, .profile-card:hover, .animated li a{
+  cursor: url('./assets/blood.svg'), auto;
+}
+body::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #230c3c;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #8605b4;
+    border-radius: 6px;
+    border: 1px solid #f1f1f1;
+  }
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background: #8605b4;
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #8605b4;
+    border-radius: 6px;
+    border: 3px solid #f1f1f1;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #8605b4;
+  }

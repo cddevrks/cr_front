@@ -1,0 +1,165 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Pirata+One&display=swap');
+  
+  
+  #intro {
+    display: flex;
+  }
+  
+  .popup1 {
+    /* position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    width: 100vw;
+    /* background: rgba(0, 0, 0, 0.75); */
+    align-items: center;
+    justify-content: center;
+    /* animation-duration: 1.5s;
+    animation-fill-mode: forwards; */
+  }
+
+  .map {
+    font-family: 'Pirata One', serif;
+    position: relative;
+  }
+  
+  .map::before,
+  .map::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 4vmin;
+    width: 104%;
+    background: #ffd;
+    top: -2vmin;
+    left: -2%;
+    clip-path: polygon(0% 0%, 30% 10%, 100% 0%, 100% 200%,0% 200%);
+    box-shadow: 0 0.25vmin 1vmin -0.25vmin rgba(0,0,0,0.5), 0 3vmin 2vmin -1.7vmin orange, inset -1px 1px #ffd, inset -2px 0 orange, inset -2vmin 0 2vmin -1.5vmin orange, inset 1px -1px #ffd, inset 2px 0 orange, inset 2vmin 0 2vmin -1.5vmin orange;
+    z-index: 2;
+  }
+  
+  .map::after {
+    top: auto;
+    bottom: -2vmin;
+    clip-path: polygon(0% -100%, 100% -100%, 100% 100%, 70% 92%, 40% 85%, 0% 100%);
+    box-shadow: 0 -0.25vmin 1vmin -0.25vmin rgba(0,0,0,0.5), 0 -3vmin 2vmin -1.7vmin orange, inset -1px 1px #ffd, inset -2px 0 orange, inset -2vmin 0 2vmin -1.5vmin orange, inset 1px -1px #ffd, inset 2px 0 orange, inset 2vmin 0 2vmin -1.5vmin orange;
+  }
+  
+  .map-body {
+    background: #ffd;
+    padding: 5vmin;
+    box-shadow: inset 0 0 1vmin brown, inset 0 0 4vmin -1.5vmin orange;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 10%, 98% 10.5%, 100% 11%, 100% 40%, 98% 41%, 100% 42%, 100% 64%, 96% 66%, 99% 68%, 98% 69%, 100% 71%, 100% 100%, 0% 100%, 0% 80%, 1% 75%, 0% 73%, 1.5% 72%, 0.25% 71%, 0% 70%, 0% 50%, 2% 49%, 0% 48%, 0% 25%, 2% 24%, 1% 23%, 2.5% 22%, 0% 21%);
+  }
+  
+  .map-body h1,
+  .map-body p {
+    font-size: 6vmin;
+    margin: 0;
+    margin-bottom: 1vmin;
+  }
+  
+  .map-body p {
+    font-size: 3.5vmin;
+    line-height: 5vmin;
+  }
+  
+  .boxx {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .row12 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+    text-wrap:wrap;
+  }
+
+  #randomize {
+    position: relative;
+    width: 100%;
+    height: 6vmin;
+    z-index: 1;
+    background: black;
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  
+  .popup1 #randomize{
+    background: black;
+    color: #ffd;
+    display: block;
+    height: 6vmin;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    font-family: 'Pirata One', serif;
+    font-size: 3.5vmin;
+  }
+  
+  .popup1 #randomize:hover{
+    background: #222;
+    cursor: pointer;
+  }
+  
+  .submit12 {
+    width: auto;
+    height: auto;
+    font-size: 16px;
+  }
+  
+  .rightinput {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    width: 80%;
+  }
+  
+  .label {
+    display: inline-block;
+    vertical-align: text-top;
+    width: 25%;
+    text-align: right;
+    font-weight: 500;
+    padding: 5px 16px 5px 16px;
+  }
+  
+  .input-field {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 300;
+    background-color: rgba(38, 38, 38, 0.749);
+    color: rgb(225, 224, 224);
+    padding-left: 10px;
+    border: #216583;
+  }
+  .input-field::placeholder{
+    color: rgb(151, 151, 151);
+  }
+
+  .container13 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+@media screen and (max-width: 576px) {
+  .label{
+    width: 30%;
+  }
+  .rightinput{
+    width: 70%;
+  }
+}

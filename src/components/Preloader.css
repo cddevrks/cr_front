@@ -1,0 +1,75 @@
+#first {
+    animation: 8s drive1 linear alternate infinite;
+}
+@keyframes drive1 {
+    from {
+        transform: translateX(-10px);
+    }
+    to {
+        transform: translateX(170px);
+    }
+}
+
+#second {
+    animation: 2s drive2 linear alternate infinite;
+}
+@keyframes drive2 {
+    from {
+        transform: translateX(-70px);
+    }
+    to {
+        transform: translateX(100px);
+    }
+}
+
+#third {
+    animation: 5s drive3 linear alternate infinite;
+}
+@keyframes drive3 {
+    from {
+        transform: translateX(-120px);
+    }
+    to {
+        transform: translateX(30px);
+    }
+}
+
+#boat {
+    transform-origin: 50% 50%;
+    animation: 2s rotate linear alternate infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.loader-wrapper {
+    position: absolute;
+    background-color: #230c3c;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.loader svg {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+body {
+    background: #222;
+}
