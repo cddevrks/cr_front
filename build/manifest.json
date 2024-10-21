@@ -1,0 +1,15 @@
+{
+  "short_name": "CR",
+  "name": "CR Abhyuday IITB",
+  "icons": [
+    {
+      "src": "black1.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
