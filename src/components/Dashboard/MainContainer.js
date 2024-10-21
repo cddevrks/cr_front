@@ -1,7 +1,6 @@
 import React from "react";
 import "./MainContainer.css";
 import "./Container.css";
-import LottieAnimation from "./LottieAnimation.js";
 import MainRightBottomCard from "./MainRightBottomCard";
 import Tasks from "./Tasks.js";
 import Leaderboard from "./Leaderboard"; 

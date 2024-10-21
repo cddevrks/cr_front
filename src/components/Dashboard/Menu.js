@@ -13,6 +13,7 @@ function Menu({ setActiveTab }) {
   const handleLogout = () => {
     googleLogout();
     localStorage.removeItem("isAuthenticated");
+    localStorage.removeItem("userEmail");
     navigate("/");
   };
 

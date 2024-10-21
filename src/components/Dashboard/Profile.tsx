@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, School, MapPin, User, ChevronDown, ChevronUp } from "lucide-react";
+import { Mail, Phone, School, MapPin, House, ChevronDown, ChevronUp } from "lucide-react";
 
 // Define the type for profile data
 interface Profile {
@@ -67,7 +67,7 @@ export default function Component() {
   };
 
   return (
-    <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl">
+    <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl font-oswald">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -124,7 +124,7 @@ export default function Component() {
               onToggle={() => toggleSection("district")}
             />
             <ProfileItem
-              icon={<User className="w-5 h-5" />}
+              icon={<House className="w-5 h-5" />}
               label="State"
               value={profile.state}
               isExpanded={expandedSection === "state"}

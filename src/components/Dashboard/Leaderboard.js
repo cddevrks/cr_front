@@ -42,7 +42,7 @@ export default function Leaderboard() {
   }
 
   return (
-    <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl">
+    <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl font-oswald">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function Leaderboard() {
           <ul className="space-y-3">
             {leaderboardData.map((item, index) => (
               <motion.li
-                key={item.userId._id} // Assuming the user ID is nested within the leaderboard data
+                key={item} // Assuming the user ID is nested within the leaderboard data
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
@@ -77,8 +77,8 @@ export default function Leaderboard() {
                   {index + 1}
                 </motion.div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-white">{item.userId.name}</h3>
-                  <p className="text-sm text-white/70">{item.userId.email}</p> {/* Replace with other details if necessary */}
+                  <h3 className="text-lg font-semibold text-white">{item.name}</h3>
+                  <p className="text-sm text-white/70">{item.college}</p> {/* Replace with other details if necessary */}
                 </div>
                 <div className="text-[#ff7934] font-bold">{item.points}</div>
               </motion.li>
