@@ -26,17 +26,32 @@ function Menu({ setActiveTab }) {
     <div className="mymenu">
       <menu>
         <ul id="mainMenu">
-          <button onClick={() => handleTabChange("home")}>
+          {/* <button onClick={() => handleTabChange("home")}>
             <Icon icon={<FaHome />} text="Home" isSelected={selectedTab === "home"} />
-          </button>
+          </button> */}
           <button onClick={() => handleTabChange("tasks")}>
-            <Icon icon={<FaTasks />} text="Tasks" isSelected={selectedTab === "tasks"} />
+            <Icon
+              icon={<FaTasks />}
+              text="Tasks"
+              isSelected={selectedTab === "tasks"}
+              className="hoverable"
+            />
           </button>
           <button onClick={() => handleTabChange("leaderboard")}>
-            <Icon icon={<FaMedal />} text="Leaderboard" isSelected={selectedTab === "leaderboard"} />
+            <Icon
+              icon={<FaMedal />}
+              text="Leaderboard"
+              isSelected={selectedTab === "leaderboard"}
+              className="hoverable"
+            />
           </button>
           <button onClick={() => handleTabChange("profile")}>
-            <Icon icon={<CgProfile />} text="Profile" isSelected={selectedTab === "profile"} className="hoverable" />
+            <Icon
+              icon={<CgProfile />}
+              text="Profile"
+              isSelected={selectedTab === "profile"}
+              className="hoverable"
+            />
           </button>
           <button onClick={handleLogout}>
             <Icon icon={<IoMdLogOut />} text="Logout" className="hoverable" />
@@ -48,7 +63,9 @@ function Menu({ setActiveTab }) {
 }
 
 const Icon = ({ icon, text, isSelected, className }) => (
-  <li className={`menu-item ${isSelected ? 'selected' : ''} ${className || ''}`}>
+  <li
+    className={`menu-item ${isSelected ? "selected" : ""} ${className || ""}`}
+  >
     <div className="icon-container">
       {icon}
       <div className="button-container">

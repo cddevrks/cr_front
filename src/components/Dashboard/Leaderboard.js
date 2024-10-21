@@ -16,7 +16,7 @@ export default function Leaderboard() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "http://localhost:5001/api/leaderboard"
+          "https://cr.abhyudayiitb.org/api/leaderboard"
         ); // Replace with your endpoint
         const leaderboard = response.data.leaderboard;
 
@@ -72,7 +72,7 @@ export default function Leaderboard() {
           <ul className="space-y-3">
             {leaderboardData.map((item, index) => (
               <motion.li
-                key={item} // Assuming the user ID is nested within the leaderboard data
+                key={Math.random()} // Assuming the user ID is nested within the leaderboard data
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}

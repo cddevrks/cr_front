@@ -16,20 +16,7 @@ function MainContainer({ activeTab }) {
       case "profile":
         return <Profile />;
       default:
-        return (
-          <div
-            className="banner new"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(255, 121, 52, 0.35) -1.39%, rgba(255, 255, 255, 0.0735) 95.65%)",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            {/* You can add content for the home tab here if needed */}
-          </div>
-        );
+        return <Tasks />;
     }
   };
 

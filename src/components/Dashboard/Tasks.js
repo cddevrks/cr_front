@@ -17,7 +17,7 @@ export default function Tasks() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("http://localhost:5001/api/tasks");
+        const response = await axios.get("https://cr.abhyudayiitb.org/api/tasks");
         const tasksData = response.data.tasks;
 
         if (tasksData && tasksData.length > 0) {
@@ -64,14 +64,13 @@ export default function Tasks() {
     setSubmittingTask(selectedTaskId);
     try {
       const response = await axios.post(
-        "http://localhost:5001/api/submit-task",
+        "https://cr.abhyudayiitb.org/api/submit-task",
         {
           email: userEmail,
           taskId: selectedTaskId,
           link: submissionLink,
         }
       );
-      console.log(response);
       // Check if the response status is 'success'
       if (response.data.status === "success") {
         toast.success("Task submitted successfully!"); // Show success toast

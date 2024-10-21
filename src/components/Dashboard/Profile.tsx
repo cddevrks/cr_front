@@ -42,10 +42,16 @@ export default function Component() {
         }
 
         const response = await axios.get(
-          `http://localhost:5001/api/profile?email=${email}`
+          `https://cr.abhyudayiitb.org/api/profile?email=${email}`
         ); // Pass the email as a query parameter
 
         setProfile(response.data.profile); // Assuming the API returns the user profile directly
+
+        if (response.data.profile.representative_type === "college") {
+          let typeStu = "College Representative";
+        } else if (response.data.profile.representative_type === "school") {
+          let typeStu = "School Representative";
+        }
       } catch (error) {
         setError("Error fetching profile. Please try again later.");
         console.error(error);
@@ -98,7 +104,7 @@ export default function Component() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-md p-6 rounded-lg shadow-lg overflow-hidden relative"
+        className="w-full max-w-md p-6 rounded-lg shadow-lg overflow-hidden relative bg-white/10"
       >
         <div className="relative z-10 space-y-6">
           <motion.div
@@ -121,7 +127,17 @@ export default function Component() {
             <h2 className="text-2xl font-bold text-[#ff7934]">
               {profile.name}
             </h2>
-            <p className="text-white/80">{profile.representativeType}</p>
+            <p className="text-white/80">
+              {(() => {
+                if (profile.representativeType === "college") {
+                  return "College Representative";
+                } else if (profile.representativeType === "school") {
+                  return "School Representative";
+                } else {
+                  return ""; // or some default value
+                }
+              })()}
+            </p>
           </motion.div>
 
           <div className="space-y-4">

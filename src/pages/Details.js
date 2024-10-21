@@ -33,7 +33,7 @@ const Details = ({ setIsAuthenticated }) => {
 
     // Save form data to MongoDB during registration
     axios
-      .post("http://localhost:5001/api/submit-form", formData)
+      .post("https://cr.abhyudayiitb.org/api/submit-form", formData)
       .then((response) => {
         if (response.data.status === "success") {
           // Navigate to Dashboard on successful registration
@@ -61,7 +61,7 @@ const Details = ({ setIsAuthenticated }) => {
     try {
       setIsLoading(true);
       // Sign-in logic
-      const response = await axios.post("http://localhost:5001/api/sign-in", {
+      const response = await axios.post("https://cr.abhyudayiitb.org/api/sign-in", {
         email: formData.email,
         password: formData.password,
       });
@@ -268,7 +268,7 @@ const Details = ({ setIsAuthenticated }) => {
                 <div className="row12">
                   <div className="label">
                     <label htmlFor="representative_type" className="text-wrap">
-                      Representative Type:
+                      *Representative Type:
                     </label>
                   </div>
                   <div className="rightinput">
