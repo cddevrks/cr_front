@@ -15,7 +15,9 @@ export default function Leaderboard() {
     const fetchLeaderboard = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:5001/api/leaderboard"); // Replace with your endpoint
+        const response = await axios.get(
+          "http://localhost:5001/api/leaderboard"
+        ); // Replace with your endpoint
         const leaderboard = response.data.leaderboard;
 
         // Update leaderboard data
@@ -26,19 +28,27 @@ export default function Leaderboard() {
       } finally {
         setLoading(false);
       }
-    }; 
+    };
 
     fetchLeaderboard();
   }, []);
 
   // Display a loading message while fetching data
   if (loading) {
-    return <div className="text-white">Loading leaderboard...</div>;
+    return (
+        <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl font-oswald">
+          <h2 className="text-2xl font-bold text-[#ff7934]">Loading leaderboard...</h2>
+        </div>
+      );
   }
 
   // Display an error message if there is an error
   if (error) {
-    return <div className="text-red-500">{error}</div>;
+    return (
+      <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl font-oswald">
+        <h2 className="text-2xl font-bold text-[#ff7934]">{error}</h2>
+      </div>
+    );
   }
 
   return (
@@ -71,14 +81,21 @@ export default function Leaderboard() {
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: index * 0.1 + 0.3, type: "spring", stiffness: 120 }}
+                  transition={{
+                    delay: index * 0.1 + 0.3,
+                    type: "spring",
+                    stiffness: 120,
+                  }}
                   className="w-8 h-8 flex-shrink-0 rounded-full bg-[#ff7934] flex items-center justify-center font-bold text-white"
                 >
                   {index + 1}
                 </motion.div>
                 <div className="flex-grow">
-                  <h3 className="text-lg font-semibold text-white">{item.name}</h3>
-                  <p className="text-sm text-white/70">{item.college}</p> {/* Replace with other details if necessary */}
+                  <h3 className="text-lg font-semibold text-white">
+                    {item.name}
+                  </h3>
+                  <p className="text-sm text-white/70">{item.college}</p>{" "}
+                  {/* Replace with other details if necessary */}
                 </div>
                 <div className="text-[#ff7934] font-bold">{item.points}</div>
               </motion.li>

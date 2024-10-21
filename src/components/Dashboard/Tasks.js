@@ -115,11 +115,19 @@ export default function Tasks() {
   };
 
   if (loading) {
-    return <div className="text-white">Loading tasks...</div>;
+    return (
+      <div className="md:min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden rounded-xl space-y-6 p-4">
+        <h2 className="text-2xl font-bold text-[#ff7934]">Loading Tasks...</h2>
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="text-red-500">{error}</div>;
+    return (
+      <div className="md:min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden rounded-xl space-y-6 p-4">
+        <h2 className="text-2xl font-bold text-[#ff7934]">{error}</h2>
+      </div>
+    );
   }
 
   return (

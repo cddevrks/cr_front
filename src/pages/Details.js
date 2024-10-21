@@ -37,12 +37,20 @@ const Details = ({ setIsAuthenticated }) => {
       .then((response) => {
         if (response.data.status === "success") {
           // Navigate to Dashboard on successful registration
+          toast.success("Account created successfully");
+          // Set authentication in localStorage
+          localStorage.setItem("isAuthenticated", "true");
+          localStorage.setItem("userEmail", formData.email);
+          // Update the authentication state to true
+          setIsAuthenticated(true);
           navigate("/dashboard");
         } else {
+          toast.error("Error! Please try again later");
           console.error("Registration failed");
         }
       })
       .catch((error) => {
+        toast.error("Error! Please try again later");
         console.error("Error submitting the registration form", error);
       });
   };

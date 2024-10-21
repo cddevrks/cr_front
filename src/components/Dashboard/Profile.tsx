@@ -3,7 +3,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, School, MapPin, House, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  School,
+  MapPin,
+  House,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 
 // Define the type for profile data
 interface Profile {
@@ -33,9 +41,11 @@ export default function Component() {
           throw new Error("No email found in local storage.");
         }
 
-        const response = await axios.get(`http://localhost:5001/api/profile?email=${email}`); // Pass the email as a query parameter
+        const response = await axios.get(
+          `http://localhost:5001/api/profile?email=${email}`
+        ); // Pass the email as a query parameter
 
-        setProfile(response.data.profile);  // Assuming the API returns the user profile directly
+        setProfile(response.data.profile); // Assuming the API returns the user profile directly
       } catch (error) {
         setError("Error fetching profile. Please try again later.");
         console.error(error);
@@ -49,17 +59,33 @@ export default function Component() {
 
   // If loading, display a loading message
   if (loading) {
-    return <div className="text-white">Loading profile...</div>;
+    return (
+      <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl font-oswald">
+        <h2 className="text-2xl font-bold text-[#ff7934]">
+          Loading Profile...
+        </h2>
+      </div>
+    );
   }
 
   // If error, display an error message
   if (error) {
-    return <div className="text-red-500 text-center">{error}</div>;
+    return (
+      <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl font-oswald">
+        <h2 className="text-2xl font-bold text-[#ff7934]">{error}</h2>
+      </div>
+    );
   }
 
   // If no profile data, handle that case
   if (!profile) {
-    return <div className="text-white">No profile data available.</div>;
+    return (
+      <div className="md:min-h-screen flex items-center justify-center bg-gradient-to-b from-[#4a332e] to-[#2d2438] overflow-hidden p-4 rounded-xl font-oswald">
+        <h2 className="text-2xl font-bold text-[#ff7934]">
+          No profile data available.
+        </h2>
+      </div>
+    );
   }
 
   const toggleSection = (section: string) => {
@@ -81,7 +107,9 @@ export default function Component() {
             transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
             className="w-32 h-32 mx-auto bg-gradient-to-br from-[#ff7934] to-[#ff9f67] rounded-full flex items-center justify-center shadow-lg"
           >
-            <span className="text-4xl font-bold text-white">{profile.name.charAt(0)}</span>
+            <span className="text-4xl font-bold text-white">
+              {profile.name.charAt(0)}
+            </span>
           </motion.div>
 
           <motion.div
@@ -90,7 +118,9 @@ export default function Component() {
             transition={{ delay: 0.3 }}
             className="text-center"
           >
-            <h2 className="text-2xl font-bold text-[#ff7934]">{profile.name}</h2>
+            <h2 className="text-2xl font-bold text-[#ff7934]">
+              {profile.name}
+            </h2>
             <p className="text-white/80">{profile.representativeType}</p>
           </motion.div>
 
@@ -139,7 +169,19 @@ export default function Component() {
   );
 }
 
-function ProfileItem({ icon, label, value, isExpanded, onToggle }: { icon: React.ReactNode; label: string; value: string; isExpanded: boolean; onToggle: () => void }) {
+function ProfileItem({
+  icon,
+  label,
+  value,
+  isExpanded,
+  onToggle,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  isExpanded: boolean;
+  onToggle: () => void;
+}) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -159,7 +201,11 @@ function ProfileItem({ icon, label, value, isExpanded, onToggle }: { icon: React
           </div>
           <p className="font-medium">{label}</p>
         </div>
-        {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+        {isExpanded ? (
+          <ChevronUp className="w-5 h-5" />
+        ) : (
+          <ChevronDown className="w-5 h-5" />
+        )}
       </motion.button>
       <AnimatePresence>
         {isExpanded && (
