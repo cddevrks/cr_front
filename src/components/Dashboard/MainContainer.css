@@ -323,9 +323,11 @@
   .maincontainer {
     flex-direction: column;
     height: auto;
+    justify-content: center;
+    align-items: end;
   }
   .maincontainer .left {
-    width: 100%;
+    width: 80%;
   }
 
   .maincontainer .left .banner .textContainer h1 {
@@ -341,7 +343,7 @@
   }
 
   .maincontainer .right {
-    width: 100%;
+    width: 80%;
     padding: unset;
   }
 }

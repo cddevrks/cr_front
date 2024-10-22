@@ -81,6 +81,9 @@ menu ul li:hover a {
 @media only screen and (max-width: 525px) {
   menu {
     min-width: 68px;
+    position: fixed;
+    top: 25%;
+    left: 0%
   }
 }
 .icon-container {

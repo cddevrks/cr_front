@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard.js";
 import Details from "./pages/Details.js";
 import AdminComponents from "./components/Admin/AdminComponents";
+import AdminSignIn from "./components/Admin/AdminSignIn.js";
 const { AdminDashboard, UploadTask, ReviewSubmissions } = AdminComponents;
 
 function App() {
@@ -36,19 +37,16 @@ function App() {
   }, []);
 
   // PrivateRoute component to protect the dashboard
-  const PrivateRoute = ({
-    element: Component,
-    adminRequired = false,
-    ...rest
-  }) => {
-    if (adminRequired && !isAdmin) {
-      return <Navigate to="/" replace />;
-    }
+  const PrivateRoute = ({ element: Component, ...rest }) => {
     return isAuthenticated ? (
       <Component {...rest} />
     ) : (
       <Navigate to="/" replace />
     );
+  };
+  // PrivateRoute component to protect the dashboard
+  const AdminRoute = ({ element: Component, ...rest }) => {
+    return isAdmin ? <Component {...rest} /> : <Navigate to="/" replace />;
   };
 
   return (
@@ -70,29 +68,42 @@ function App() {
         {/* Other routes like Details */}
         <Route
           path="/details"
-          element={<Details setIsAuthenticated={setIsAuthenticated} />}
+          element={
+            isAuthenticated ? (
+              <Dashboard />
+            ) : (
+              <Details setIsAuthenticated={setIsAuthenticated} />
+            )
+          }
         />
 
         {/* Admin routes */}
         <Route
           path="/admin"
           element={
-            // <PrivateRoute element={AdminDashboard} adminRequired={true} />
-            <AdminDashboard />
+            // <PrivateRoute element={AdminDashboard} />
+            <AdminSignIn setIsAdmin={setIsAdmin} />
+          }
+        />
+        <Route
+          path="/admin-dashboard"
+          element={
+            <AdminRoute element={AdminDashboard} />
+            // <AdminDashboard />
           }
         />
         <Route
           path="/admin/upload-task"
           element={
-          // <PrivateRoute element={UploadTask} adminRequired={true} />
-          <UploadTask/>
-        }
+            <AdminRoute element={UploadTask} />
+            // <UploadTask/>
+          }
         />
         <Route
           path="/admin/review-submissions"
           element={
-            // <PrivateRoute element={ReviewSubmissions} adminRequired={true} />
-            <ReviewSubmissions/>
+            <AdminRoute element={ReviewSubmissions} />
+            // <ReviewSubmissions/>
           }
         />
       </Routes>

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
-axios.defaults.baseURL = "https://newcr.abhyudayiitb.org";
+axios.defaults.baseURL = "https://cr.abhyudayiitb.org";
 
 export default function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState([]);

@@ -41,9 +41,7 @@ export default function Component() {
           throw new Error("No email found in local storage.");
         }
 
-        const response = await axios.get(
-          `/api/profile?email=${email}`
-        ); // Pass the email as a query parameter
+        const response = await axios.get(`/api/profile?email=${email}`); // Pass the email as a query parameter
 
         setProfile(response.data.profile); // Assuming the API returns the user profile directly
 
@@ -138,6 +136,7 @@ export default function Component() {
                 }
               })()}
             </p>
+            <p className="text-white/80">CR Points : {profile.points}</p>
           </motion.div>
 
           <div className="space-y-4">
