@@ -17,7 +17,7 @@ export default function Tasks() {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("https://cr.abhyudayiitb.org/api/tasks");
+        const response = await axios.get("/api/tasks");
         const tasksData = response.data.tasks;
 
         if (tasksData && tasksData.length > 0) {
@@ -64,7 +64,7 @@ export default function Tasks() {
     setSubmittingTask(selectedTaskId);
     try {
       const response = await axios.post(
-        "https://cr.abhyudayiitb.org/api/submit-task",
+        "/api/submit-task",
         {
           email: userEmail,
           taskId: selectedTaskId,

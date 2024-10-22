@@ -42,7 +42,7 @@ export default function Component() {
         }
 
         const response = await axios.get(
-          `https://cr.abhyudayiitb.org/api/profile?email=${email}`
+          `/api/profile?email=${email}`
         ); // Pass the email as a query parameter
 
         setProfile(response.data.profile); // Assuming the API returns the user profile directly

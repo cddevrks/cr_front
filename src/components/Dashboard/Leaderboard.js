@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { Trophy } from "lucide-react";
+axios.defaults.baseURL = "https://newcr.abhyudayiitb.org";
 
 export default function Leaderboard() {
   const [leaderboardData, setLeaderboardData] = useState([]);
@@ -16,7 +17,7 @@ export default function Leaderboard() {
       try {
         setLoading(true);
         const response = await axios.get(
-          "https://cr.abhyudayiitb.org/api/leaderboard"
+          "/api/leaderboard"
         ); // Replace with your endpoint
         const leaderboard = response.data.leaderboard;
 
